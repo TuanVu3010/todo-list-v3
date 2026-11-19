@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Todo List</title>
+  <!-- liên kết file CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="khung-ung-dung">
+    <h1 class="tieu-de">Danh sách công việc <span class="phien-ban">v0.3</span></h1>
+
+    <!-- form nhập việc: ô nhập + nút Thêm -->
+    <form id="formNhapViec" class="form-nhap-viec">
+      <input id="oNhapViec" class="o-nhap" type="text" placeholder="Hôm nay bạn cần làm gì?" autocomplete="off">
+      <button class="nut nut-them" type="submit">Thêm</button>
+    </form>
+
+    <!-- danh sách việc: JS sẽ render các <li> vào đây -->
+    <ul id="danhSachViec" class="danh-sach"></ul>
+
+    <!-- thông báo khi danh sách rỗng -->
+    <p id="thongBaoRong" class="thong-bao-rong">Chưa có việc nào. Hãy thêm việc đầu tiên.</p>
+  </main>
+
+  <!-- liên kết file JS (đặt cuối body để DOM đã load xong) -->
+  <script src="script.js"></script>
+</body>
+</html>

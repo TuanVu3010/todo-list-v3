@@ -1,0 +1,84 @@
+/* ===== Thiết lập chung ===== */
+:root {
+  --nen: #eef1f4;
+  --the: #ffffff;
+  --chu: #1c2430;
+  --chu-phu: #6b7685;
+  --vien: #d9dee5;
+  --nhan: #1f6f5c;
+  --nhan-dam: #17564a;
+  --xoa: #b3392f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--nen);
+  color: var(--chu);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  display: flex;                 /* flexbox: căn giữa khung ứng dụng */
+  justify-content: center;
+  align-items: flex-start;
+  padding: 48px 16px;
+}
+
+/* ===== Khung ứng dụng ===== */
+.khung-ung-dung {
+  width: 100%;
+  max-width: 520px;
+  background: var(--the);
+  border: 1px solid var(--vien);
+  border-radius: 10px;
+  padding: 28px;
+}
+
+.tieu-de { margin: 0 0 20px; font-size: 1.6rem; }
+.phien-ban { font-size: 0.9rem; font-weight: 400; color: var(--chu-phu); }
+
+/* ===== Form nhập việc ===== */
+.form-nhap-viec { display: flex; gap: 8px; margin-bottom: 20px; }
+
+.o-nhap {
+  flex: 1;                       /* ô nhập chiếm hết phần còn lại */
+  padding: 10px 12px;
+  border: 1px solid var(--vien);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.o-nhap:focus { outline: 2px solid var(--nhan); outline-offset: 1px; }
+
+/* ===== Nút bấm ===== */
+.nut {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.nut:focus-visible { outline: 2px solid var(--chu); outline-offset: 2px; }
+.nut-them { background: var(--nhan); color: #fff; }
+.nut-them:hover { background: var(--nhan-dam); }
+.nut-done { background: transparent; color: var(--nhan); border: 1px solid var(--nhan); padding: 6px 12px; }
+.nut-done:hover { background: #e3f1ed; }
+.nut-xoa { background: transparent; color: var(--xoa); padding: 6px 10px; }
+.nut-xoa:hover { background: #f8e6e4; }
+
+/* ===== Danh sách việc ===== */
+.danh-sach { list-style: none; margin: 0; padding: 0; }
+
+.muc-viec {
+  display: flex;                 /* flexbox: nội dung bên trái, nút bên phải */
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--vien);
+}
+.muc-viec:last-child { border-bottom: 0; }
+
+.noi-dung { flex: 1; word-break: break-word; }
+.muc-viec.hoan-thanh .noi-dung { text-decoration: line-through; color: var(--chu-phu); }
+
+.thong-bao-rong { margin: 0; color: var(--chu-phu); text-align: center; }
+.thong-bao-rong[hidden] { display: none; }
